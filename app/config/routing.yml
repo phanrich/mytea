@@ -1,0 +1,9 @@
+app:
+    resource: "@CoreBundle/Controller/"
+    type:     annotation
+extend:
+    resource: "@ExtendBundle/Controller/"
+    type:     annotation
+extend_ext:
+    resource: "@CoreBundle/ControllerExt/"
+    type:     annotation
