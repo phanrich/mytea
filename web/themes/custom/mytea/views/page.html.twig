@@ -1,0 +1,12 @@
+{% extends '@front/base.html.twig' %}
+{% block page_content %}
+<div class="wrapper">
+    {{ (regions.header??'')|raw }}
+
+    {% block content %}
+    <h1>Content</h1>
+    {% endblock %}
+
+    {{ (regions.footer??'')|raw }}
+</div>
+{% endblock %}
