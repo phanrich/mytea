@@ -1,0 +1,38 @@
+<header id="fh5co-header" role="banner">
+    <div class="container">
+        <div class="header-inner">
+            <a href="{{ path('index_page') }}" class="logo" title="Brian Riedlinger Publishing">
+                <img src="/web/themes/custom/mytea/images/global/logo.jpg" alt="">
+                <h1>
+                    Brian Riedlinger Publishing
+                </h1>
+            </a>
+            <nav role="navigation">
+                <ul>
+                    {#<li><a href="about.html" title="About">About</a></li>#}
+                    {#<li><a href="contact.html" title="Contact">Contact</a></li>#}
+                    {#<li><a href="donate.html" title="Donate">Donate</a></li>#}
+                    {% for item in data.menus.main_menus %}
+                        {% if (item.active??0) %}
+                            <li><a href="{{ item.link }}" class="active">{{ item.title }}</a></li>
+                        {% else %}
+                            <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if app.user.id??false %}
+                        <li><a href="{{ path('account_page') }}" title="Login / Register">Your Account</a></li>
+                    {% else %}
+                        <li><a href="{{ path('account_page') }}" title="Login / Register">Login / Register</a></li>
+                    {% endif %}
+                    <!-- <li><a href="my-account.html" title="My Account">My Account</a></li> -->
+                    <li><a href="cart.html" title="Cart 0 Items - $0.00">Cart 0 Items - $0.00</a></li>
+                    <!-- <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="services.html">Services</a></li> -->
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
